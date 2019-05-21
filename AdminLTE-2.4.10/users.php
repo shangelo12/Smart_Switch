@@ -1,3 +1,16 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['login']))
+  {
+    $_SESSION['re'] = $_SERVER['REQUEST_URI'];
+    header('location: login.php');
+  }
+  
+  
+ // print_r($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -345,7 +358,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li class="active"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
            <!-- <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li> -->
           </ul>
         </li>
@@ -354,8 +367,7 @@
             <i class="fa fa-users"></i>
             <span>Users</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
+              <span class="label label-primary pull-right"></span></span>
           </a>
           <ul class="treeview-menu">
             <li class = "active"><a href="users.php"><i class="fa fa-user"></i>Registered Users</a></li>
@@ -452,7 +464,7 @@
                                 echo '<div class="btn-group">';
                                   echo '<td>';
                                       echo '<a class="btn btn-success" href="pages/examples/register.php"><i class="fa fa-plus"></i></a>';
-                                      echo '<a class="btn btn-danger" href="user_delete.php?user_id =.$users[0]." onclick="return confirm(\'Are you sure?\')"><i class="fa fa-trash"></i></a>';
+                                      echo '<a class="btn btn-danger" href="user_delete.php?user_id='.$users[0].'" onclick="return confirm(\'Are you sure?\')"><i class="fa fa-trash"></i></a>';
                                   echo '</td>';
                                   echo '</div>';
                         echo '</tr>';

@@ -1,3 +1,16 @@
+<?php
+  session_start();
+
+  if (!isset($_SESSION['login']))
+  {
+    $_SESSION['re'] = $_SERVER['REQUEST_URI'];
+    header('location: login.php');
+  }
+  
+  
+  //print_r($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,12 +51,12 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>CS</span>
       <!-- logo for regular state and mobile devices -->
@@ -296,7 +309,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -441,7 +454,7 @@
             <div class="icon">
               <i class="ion ion-person"></i>
             </div>
-            <a href="users.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="users.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -471,7 +484,7 @@
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="pages/examples/register.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="pages/examples/register.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -486,7 +499,7 @@
             <div class="icon">
               <i class="ion ion-document-text"></i>
             </div>
-            <a href="logs.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="logs.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->

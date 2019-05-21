@@ -1,15 +1,15 @@
 <?php
 	require('connectdb.php');
 
-    $name = $_POST['name'];
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+	$name = $_POST['name'];
 	
     echo $name;
     
-	if ($name != '' and $username != '' and $password != '') {
+	if ($username != '' and $password != '' and $username != '') {
 		
-		$query = "INSERT into users (name, username, password) VALUES ('".$name."', '".$username."', '".$password.')";
+		$query = "INSERT into users (username, password, name) VALUES ('".$username."', '".$password."','".$name."')";
 		mysqli_query($conn, $query);		
 	}
 
