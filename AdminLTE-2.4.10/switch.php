@@ -43,7 +43,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index.html" class="logo">
+    <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>CS</span>
       <!-- logo for regular state and mobile devices -->
@@ -60,10 +60,11 @@
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
+            <!-- remove messaging
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
               <li>
@@ -183,10 +184,11 @@
           <!--end notif-->
           <!-- Tasks: style can be found in dropdown.less -->
           <li class="dropdown tasks-menu">
+            <!-- remove tasks
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">9</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu">
               <li class="header">You have 9 tasks</li>
               <li>
@@ -418,16 +420,54 @@
     <section class="content-header">
       <h1>
        Switch
-        <small></small>
+        <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Switch</li>
       </ol>
-    </section>
+    
+<?php
+          require('connectdb.php');
+          $query = "SELECT * from switch";
+          $sql = mysqli_query($conn,$query);
 
-   <!-- USERSSS -->
-      
+         
+          echo '<br>';
+
+            echo '<table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th>SWITCH ID</th>
+                                 <th>NAME</th>
+                                 <th>ON</th>
+                                 <th>OFF</th>
+                                 <th>STATUS</th>
+                                 <th>BUTTONS</th>
+                              </tr>';
+                    while($switch = mysqli_fetch_array($sql)){
+                        echo'<tr>';
+                                echo '<td>'.$switch['0'].'</td>';
+                                echo '<td>'.$switch['1'].'</td>';
+                                echo '<td><a class="btn btn-success" href="#"><i class="fa fa-square"></i></a>'.$switch['2'].'</td>';
+                                echo '<td><a class="btn btn-danger" href="#"><i class="fa fa-square-o"></i></a>'.$switch['3'].'</td>';
+                                echo '<td>'.$switch['4'].'</td>';
+                                echo '<div class="btn-group">';
+                                  echo '<td>';
+                                      echo '<a class="btn btn-success" href="pages/examples/register.php"><i class="fa fa-plus"></i></a>';
+                                      echo '<a class="btn btn-danger" href="user_delete.php?user_id='.$switch[0].'" onclick="return confirm(\'Are you sure?\')"><i class="fa fa-trash"></i></a>';
+                                  echo '</td>';
+                                  echo '</div>';
+                        echo '</tr>';
+                                 }                      
+
+                        echo '</tbody>';
+                        echo '</table>';             
+?>
+   
+   
+   </section>
+  </div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 0.0.0

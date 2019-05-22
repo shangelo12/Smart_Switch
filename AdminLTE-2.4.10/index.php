@@ -73,10 +73,11 @@
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+           <!-- Remove the messaging
+           <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu">
               <li class="header">You have 4 messages</li>
               <li>
@@ -195,11 +196,12 @@
           </li>
           <!--end notif-->
           <!-- Tasks: style can be found in dropdown.less -->
-          <li class="dropdown tasks-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+         <li class="dropdown tasks-menu">
+          <!-- Remove the tasks
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-flag-o"></i>
               <span class="label label-danger">9</span>
-            </a>
+            </a> -->
             <ul class="dropdown-menu">
               <li class="header">You have 9 tasks</li>
               <li>
@@ -384,7 +386,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="switch.html"><i class="fa fa-toggle-on"></i> Switch</a></li>
+            <li><a href="switch.php"><i class="fa fa-toggle-on"></i> Switch</a></li>
             <li><a href="connection.html"><i class="fa fa-code-fork"></i> Connections</a></li>
             <li><a href="settings.html"><i class="fa fa-wrench"></i> Settings</a></li>
           </ul>
